@@ -1,0 +1,19 @@
+{
+  "results": [{
+      "id": "45363456345634",
+      "name": "SDFSDFG",
+      "inStock": false,
+      "horsePower": "240HP",
+      "price": 200000,
+      "color": "black"
+    },
+    {
+      "id": "45363456345634",
+      "name": "ruyrtyurty",
+      "inStock": true,
+      "horsePower": "540HP",
+      "price": 900000,
+      "color": "black"
+    }
+  ]
+}
