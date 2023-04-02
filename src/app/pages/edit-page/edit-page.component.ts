@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'edit-page',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./edit-page.component.less'],
 })
 export class EditPageComponent {
-  constructor() {}
+  public stockData: any;
 
-  ngOnInit() {}
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.stockData = history.state.data;
+    console.log(this.stockData);
+
+    if (!this.stockData) {
+      this.router.navigate(['/entry-page']);
+    }
+  }
 }

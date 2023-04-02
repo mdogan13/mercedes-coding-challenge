@@ -1,8 +1,9 @@
+import { ColorOptions } from "./ColorOptions";
+
 export interface Car {
     id: string;
-    name:string;
     inStock: boolean;
-    horsePower: string;
+    horsePower: number;
     price: number;
-    color: string;
+    color: ColorOptions;
   }

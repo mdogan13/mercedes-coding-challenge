@@ -1,12 +1,27 @@
 import { Injectable } from '@angular/core';
-import STOCK_MOCK_DATA from './mock-data.json';
+import { Car } from '../models/Car';
+import { MockDataService } from './mock-data.service';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  constructor() {}
+  constructor(private mockDataService: MockDataService) {}
 
   public getStockData() {
-    let data = STOCK_MOCK_DATA;
-    return new Promise((resolve) => setTimeout(() => resolve(data), 500));
+    return new Promise((resolve) =>
+      setTimeout(() => resolve(this.mockDataService.getData()), 500)
+    );
+  }
+
+  public setStockData(params: { carId: string; newStockData: Car }) {
+    const isOperationSuccess = this.mockDataService.setData({
+      carId: params.carId,
+      newStockData: params.newStockData,
+    });
+
+    if (isOperationSuccess) {
+      return Promise.resolve({ status: 200, message: 'success' });
+    } else {
+      return Promise.reject({ status: 400, message: 'could not set the data' });
+    }
   }
 }

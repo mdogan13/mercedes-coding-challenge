@@ -3,17 +3,23 @@
       "id": "45363456345634",
       "name": "SDFSDFG",
       "inStock": false,
-      "horsePower": "240HP",
+      "horsePower": 240,
       "price": 200000,
-      "color": "black"
+      "color": {
+        "selected": "black",
+        "options": ["black", "red"]
+      }
     },
     {
-      "id": "45363456345634",
+      "id": "4536345634563469",
       "name": "ruyrtyurty",
       "inStock": true,
-      "horsePower": "540HP",
+      "horsePower": 540,
       "price": 900000,
-      "color": "black"
+      "color": {
+        "selected": "black",
+        "options": ["black", "red","purple"]
+      }
     }
   ]
 }
