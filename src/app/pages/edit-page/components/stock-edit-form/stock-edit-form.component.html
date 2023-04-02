@@ -23,6 +23,7 @@
     <legend>Color</legend>
     <mat-radio-group formControlName="color">
       <mat-radio-button *ngFor="let color of stockData.color?.options" [value]="color">{{color | titlecase}}
+        <mat-icon [ngClass]="color" class="color-icon"> fiber_manual_record</mat-icon>
       </mat-radio-button>
     </mat-radio-group>
   </fieldset>
