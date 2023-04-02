@@ -1,7 +1,6 @@
 {
   "results": [{
       "id": "45363456345634",
-      "name": "SDFSDFG",
       "inStock": false,
       "horsePower": 240,
       "price": 200000,
@@ -12,13 +11,22 @@
     },
     {
       "id": "4536345634563469",
-      "name": "ruyrtyurty",
       "inStock": true,
       "horsePower": 540,
       "price": 900000,
       "color": {
         "selected": "black",
         "options": ["black", "red","purple"]
+      }
+    },
+    {
+      "id": "453634562323241",
+      "inStock": true,
+      "horsePower": 99999,
+      "price": 900000,
+      "color": {
+        "selected": "blue",
+        "options": ["black", "red","purple","blue"]
       }
     }
   ]

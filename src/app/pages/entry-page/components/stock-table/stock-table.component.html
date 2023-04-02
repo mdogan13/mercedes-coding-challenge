@@ -1,3 +1,4 @@
+<h2 class="table-title">Car Inventory</h2>
 <table mat-table [dataSource]="stockData" class="mat-elevation-z8">
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -15,7 +16,7 @@
   </ng-container>
 
   <ng-container matColumnDef="horsePower">
-    <th mat-header-cell *matHeaderCellDef> Horsepower </th>
+    <th mat-header-cell *matHeaderCellDef> HP </th>
     <td mat-cell *matCellDef="let element"> {{element.horsePower}} </td>
   </ng-container>
 
@@ -26,13 +27,13 @@
 
   <ng-container matColumnDef="color">
     <th mat-header-cell *matHeaderCellDef> Color </th>
-    <td mat-cell *matCellDef="let element"> {{element.color.selected}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.color.selected | titlecase}} </td>
   </ng-container>
 
   <ng-container matColumnDef="edit">
     <th mat-header-cell *matHeaderCellDef> Edit </th>
     <td mat-cell *matCellDef="let element">
-      <button (click)=onEdit($event,element) mat-raised-button>Edit</button>
+      <button color="primary" (click)=onEdit($event,element) mat-raised-button>Edit</button>
     </td>
   </ng-container>
 
