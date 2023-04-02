@@ -15,6 +15,7 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { StockEditFormComponent } from './pages/edit-page/components/stock-edit-form/stock-edit-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 const COMPONENTS = [
   EntryPageComponent,
@@ -32,6 +33,7 @@ const ANGULAR_MATERIAL_MODULE = [
   MatButtonModule,
   MatCheckboxModule,
   MatRadioModule,
+  MatIconModule
 ];
 
 @NgModule({

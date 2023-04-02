@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Car } from '../../../../models/Car';
 import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
+import { APP_ROUTES } from 'src/app/constants/routes';
 
 @Component({
   selector: 'stock-table',
@@ -27,9 +28,7 @@ export class StockTableComponent {
     });
   }
   onEdit(event: MouseEvent, element: any) {
-    console.log(event, element);
-
-    this.router.navigate(['/edit-page'], {
+    this.router.navigate([`/${APP_ROUTES.EDIT_PAGE}`], {
       state: { data: JSON.stringify(element) },
     });
   }

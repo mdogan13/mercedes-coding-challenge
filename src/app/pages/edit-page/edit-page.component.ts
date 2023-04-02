@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { APP_ROUTES } from 'src/app/constants/routes';
 
 @Component({
   selector: 'edit-page',
@@ -13,10 +14,9 @@ export class EditPageComponent {
 
   ngOnInit() {
     this.stockData = history.state.data;
-    console.log(this.stockData);
 
     if (!this.stockData) {
-      this.router.navigate(['/entry-page']);
+      this.router.navigate([`/${APP_ROUTES.ENTRY_PAGE}`]);
     }
   }
 }
