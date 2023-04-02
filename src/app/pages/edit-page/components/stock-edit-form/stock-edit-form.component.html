@@ -7,7 +7,7 @@
 
   <mat-form-field class="form-field">
     <mat-label>Horsepower</mat-label>
-    <input matInput min="HORSEPOWER_MIN" max="HORSEPOWER_MAX" formControlName="horsePower" type="number" required>
+    <input matInput [min]="HORSEPOWER_MIN" [max]="HORSEPOWER_MAX" formControlName="horsePower" type="number" required>
     <mat-error *ngIf="myForm.get('horsePower').invalid">Horsepower must be between 100 and 550</mat-error>
   </mat-form-field>
 
