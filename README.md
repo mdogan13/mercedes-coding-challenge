@@ -1,4 +1,5 @@
 # MercedesCodingChallenge
+Simple car inventory application created with Angular Material due to its convenient way of form handling and prestyled UI components. You can list the existing items and edit them through Angular Material's tables and forms.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 

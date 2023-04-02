@@ -1,0 +1,35 @@
+<h2>Edit Stock Data</h2>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="form-field">
+    <mat-label>Car ID</mat-label>
+    <input matInput formControlName="carId" placeholder="Car ID">
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Horsepower</mat-label>
+    <input matInput [min]="HORSEPOWER_MIN" [max]="HORSEPOWER_MAX" formControlName="horsePower" type="number" required>
+    <mat-error *ngIf="myForm.get('horsePower').invalid">Horsepower must be between 100 and 550</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Price (€)</mat-label>
+    <input matInput formControlName="price" type="number" required>
+    <mat-error *ngIf="myForm.get('price').invalid">You must enter a price value</mat-error>
+  </mat-form-field>
+
+  <mat-checkbox class="form-field" matCheckbox formControlName="inStock">In stock</mat-checkbox>
+
+  <fieldset>
+    <legend>Color</legend>
+    <mat-radio-group formControlName="color">
+      <mat-radio-button *ngFor="let color of stockData.color?.options" [value]="color">{{color | titlecase}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </fieldset>
+
+  <div class="button-wrapper">
+    <button mat-raised-button [disabled]="!hasChangesMade || !myForm.valid" color="primary"
+      type="submit">Submit</button>
+    <button mat-raised-button (click)="goToEntryPage()">Cancel</button>
+  </div>
+</form>

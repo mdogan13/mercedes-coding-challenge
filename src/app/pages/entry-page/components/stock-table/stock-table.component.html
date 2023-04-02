@@ -1,0 +1,45 @@
+<h2 class="table-title">Car Inventory</h2>
+<table mat-table [dataSource]="stockData" class="mat-elevation-z8">
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let i = index;"> {{i+1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> CarId </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="inStock">
+    <th mat-header-cell *matHeaderCellDef> In Stock </th>
+    <td mat-cell *matCellDef="let element"> {{element.inStock}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="horsePower">
+    <th mat-header-cell *matHeaderCellDef> HP </th>
+    <td mat-cell *matCellDef="let element"> {{element.horsePower}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let element"> {{element.price || 0 | number:'1.2-2'}} € </td>
+  </ng-container>
+
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef> Color </th>
+
+    <td mat-cell *matCellDef="let element"> {{element.color.selected | titlecase}}
+      <mat-icon [ngClass]="element.color.selected" class="color-icon"> fiber_manual_record</mat-icon>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Edit </th>
+    <td mat-cell *matCellDef="let element">
+      <button color="primary" (click)=onEdit($event,element) mat-raised-button>Edit</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
